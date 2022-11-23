@@ -1,5 +1,9 @@
 package car;
 
+/**
+ * @author Facsimile Nimely, Abdikafi Jama
+ * @version 1
+ */
 public class Location {
     private String city;
     private int zip;
