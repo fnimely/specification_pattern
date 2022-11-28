@@ -22,6 +22,6 @@ public class MileageSpecification implements ParameterizedSpecification {
 
     @Override
     public boolean isSatisfiedBy(Car car) {
-        return car.getMileage() == mileage;
+        return car.getMileage() <= mileage;
     }
 }
