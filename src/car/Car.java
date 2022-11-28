@@ -92,4 +92,9 @@ public class Car {
         this.location = location;
     }
 
+    @Override
+    public String toString() {
+        return "Car [make=" + make + ", year=" + year + ", mileage=" + mileage + ", location=" + location + "]";
+    }
+
 }
