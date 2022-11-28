@@ -1,23 +1,22 @@
 package composite;
 
-import car.Car;
 import specifications.ICompositeSpecification;
 
 /**
  * @author Facsimile Nimely, Abdikafi Jama
  * @version 1
  */
-public abstract class CompositeSpecification implements ICompositeSpecification {
+public abstract class CompositeSpecification<T> implements ICompositeSpecification<T> {
     @Override
-    public abstract boolean isSatisfiedBy(Car car);
+    public abstract boolean isSatisfiedBy(T candidate);
 
     @Override
-    public ICompositeSpecification And(ICompositeSpecification other) {
+    public ICompositeSpecification<T> And(ICompositeSpecification<T> other) {
         return new AndSpecification(this, other);
     };
 
     @Override
-    public ICompositeSpecification AndNot(ICompositeSpecification other) {
-        return new AndSpecification(this, other);
+    public ICompositeSpecification<T> AndNot(ICompositeSpecification<T> other) {
+        return new AndNotSpecification(this, other);
     }
 }
